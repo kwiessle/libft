@@ -1,9 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/10/30 15:37:13 by kwiessle          #+#    #+#             */
+/*   Updated: 2015/10/30 15:37:38 by kwiessle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-#include <stdio.h>
-#include <unistd.h>
-#include <string.h>
-#include <libc.h>
+#include "libft.h"
 
 int		ft_atoi(char *str)
 {
@@ -23,16 +30,3 @@ int		ft_atoi(char *str)
 		toi = -toi;
 	return (toi);
 }
-
-int		main(int ac, char **av)
-{
-	char	c = '\n';
-	if (ac)
-		printf("atoi : %d\n", ft_atoi(av[1]));
-		printf("real atoi : %d", atoi(av[1]));
-	write(1, &c, 1);
-	return (0);
-}
-
-
-
