@@ -53,7 +53,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 
 int		main()
 {
-	printf("strcat : %s\n", ft_strncat("kiefer", "laterreur", 9));
+	printf("strcat : %s\n", ft_strncat("kiefer", "laterreur", 3));
 	return (0);
 }
 
