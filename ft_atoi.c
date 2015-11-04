@@ -9,10 +9,9 @@
 /*   Updated: 2015/10/30 15:37:38 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int		i;
 	int		toi;

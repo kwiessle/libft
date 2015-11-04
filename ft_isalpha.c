@@ -1,4 +1,4 @@
-#include "test.h"
+#include "libft.h"
 
 int		ft_isalpha(int c)
 {
