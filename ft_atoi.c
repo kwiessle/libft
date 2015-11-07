@@ -15,17 +15,23 @@ int		ft_atoi(const char *str)
 {
 	int		i;
 	int		toi;
+	int		verif;
 
 	i = 0;
 	toi = 0;
+	while (ft_isspace(str[i]) == 1)
+			i++;
 	if (str[i] == '-')
+	{
+		verif = i;
 		i++;
+	}
 	while (str[i] != '\0' && str[i] > 47 && str[i] < 58)
 	{
 		toi = (toi * 10) + (str[i] - 48);
 		i++;
 	}
-	if (str[0] == '-')
+	if (str[verif] == '-')
 		toi = -toi;
 	return (toi);
 }

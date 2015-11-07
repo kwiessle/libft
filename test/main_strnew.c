@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   main_strnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rdestreb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/20 17:17:29 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/10/20 14:52:22 by kwiessle         ###   ########.fr       */
+/*   Created: 2014/11/12 16:46:57 by rdestreb          #+#    #+#             */
+/*   Updated: 2014/11/12 17:12:14 by rdestreb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int main(void)
 {
-	while (*s1 && *s2 && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	if (*s1 != *s2)
-		return ((unsigned char)*s1 - (unsigned char)*s2);
-	else
-		return (0);
+	char	*ret;
+
+	ret = ft_strnew(0);
+    ft_strdel(&ret);
+
+	ft_strdel(NULL);
+	ret = ft_strnew(4);
+	ft_strdel(&ret);
+    return (0);
 }

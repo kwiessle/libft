@@ -1,4 +1,6 @@
 
+#include "libft.h"
+
 int		ft_nb_blank(char const *str)
 {
 	int		i;
@@ -13,16 +15,6 @@ int		ft_nb_blank(char const *str)
 		i++;
 	}
 	return (j);
-}
-
-int		ft_strlen(char const *s)
-{
-	int		i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
 }
 
 char	*ft_strtrim(char const *s)

@@ -72,6 +72,7 @@ SRC_NAME= ft_atoi.c \
 		  ft_strtrim.c \
 		  ft_tolower.c \
 		  ft_toupper.c \
+		  ft_isspace.c \
 
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
