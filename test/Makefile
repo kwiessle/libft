@@ -18,6 +18,7 @@ SRC =	main.c \
 		main_strequ.c \
 		main_striter.c \
 		main_strlen.c \
+		main_strsplit.c \
 		main_strtrim.c \
 		main_strstr.c \
 

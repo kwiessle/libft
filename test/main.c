@@ -30,8 +30,8 @@ int main()
 	getchar();
 	main_strtrim();
 	getchar();
-//	main_strsplit();
-//	getchar();
+	main_strsplit();
+	getchar();
 	main_itoa();
 	getchar();
 	main_putstr();

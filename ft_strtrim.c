@@ -36,6 +36,7 @@ char	*ft_strtrim(char const *s)
 			j++;
 			i++;
 		}
+		ret[i] = 0;
 	}
 	return (ret);
 }
