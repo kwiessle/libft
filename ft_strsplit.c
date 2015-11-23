@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/23 18:34:01 by kwiessle          #+#    #+#             */
+/*   Updated: 2015/11/23 18:34:06 by kwiessle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -28,12 +39,11 @@ int		**set_matrix(const char *s, char c)
 	int		i;
 
 	i = -1;
-	matrix = malloc((count_elem(s, c))*sizeof(int*));
+	matrix = malloc((count_elem(s, c)) * sizeof(int*));
 	while (i++ < count_elem(s, c))
-		matrix[i] = malloc(2*sizeof(int));
+		matrix[i] = malloc(2 * sizeof(int));
 	return (matrix);
 }
-
 
 int		**matrix(const char *s, char c)
 {
@@ -73,7 +83,7 @@ char	**ft_strsplit(const char *s, char c)
 
 	map = matrix(s, c);
 	a = count_elem(s, c);
-	tab = malloc((a + 1)*sizeof(char*));
+	tab = malloc((a + 1) * sizeof(char*));
 	i = 0;
 	while (i < a)
 	{

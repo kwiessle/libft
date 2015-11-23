@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/23 18:35:48 by kwiessle          #+#    #+#             */
+/*   Updated: 2015/11/23 18:37:03 by kwiessle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -10,7 +21,7 @@ int		ft_nb_blank(char const *str)
 	j = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' )
+		if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
 			j++;
 		i++;
 	}
@@ -28,7 +39,7 @@ char	*ft_strtrim(char const *s)
 	ret = malloc(sizeof(ft_strlen(s) - ft_nb_blank(s)));
 	while (s[i] != '\0')
 	{
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t' )
+		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 			i++;
 		else
 		{
