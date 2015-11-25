@@ -20,9 +20,15 @@ int		ft_atoi(const char *str)
 
 	i = 0;
 	toi = 0;
-	while ((ft_isspace(str[i]) == 1 || str[i] == '+') && str[i])
+	while ((ft_isspace(str[i]) == 1 && str[i]))
+	{
 		i++;
-	if (str[i] == '-')
+		if (str[i] == '+')
+			i++;
+	}
+	if (ft_isdigit(str[i]) == 0)
+		return (0);
+	if  (str[i] == '-')
 	{
 		verif = i;
 		i++;
