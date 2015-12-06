@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/30 15:37:13 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/11/23 17:56:50 by kwiessle         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 int		ft_atoi(const char *str)
@@ -20,25 +8,19 @@ int		ft_atoi(const char *str)
 
 	i = 0;
 	toi = 0;
-	while ((ft_isspace(str[i]) == 1 && str[i]))
-	{
+	verif = 1;
+	while (ft_isspace(str[i]) == 1 && str[i])
 		i++;
-		if (str[i] == '+')
-			i++;
-	}
-	if (ft_isdigit(str[i]) == 0)
-		return (0);
-	if  (str[i] == '-')
+	if ((str[i] == '+' || str[i] == '-') && ft_isdigit(str[i + 1]) == 1)
 	{
-		verif = i;
+		if (str[i] == '-')
+			verif = -verif;
 		i++;
 	}
-	while (str[i] != '\0' && str[i] > 47 && str[i] < 58)
+	while (ft_isdigit(str[i]) == 1 && str[i] != '\0')
 	{
 		toi = (toi * 10) + (str[i] - 48);
 		i++;
 	}
-	if (str[verif] == '-')
-		toi = -toi;
-	return (toi);
+	return (verif * toi);
 }

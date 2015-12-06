@@ -14,29 +14,20 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t		i;
-	size_t		j;
-	char		*ptr;
+	char		*tmp;
+	char		*mem;
+	size_t		size;
 
-	i = 0;
-	j = 0;
-	if (s1[i])
+	mem = (char *)(s1 + n);
+	size = ft_strlen(s2);
+	tmp = (char *)s1;
+	if (!s2 || !s1 || !size)
+		return ((char *)s1);
+	while ((tmp = ft_strchr(tmp, *s2)) && tmp <= mem)
 	{
-		if (s2[j] == '\0')
-			return ((char*)s1);
-		while (s1[i] && i < n)
-		{
-			ptr = (char*)&s1[i];
-			while (s1[i] == s2[j] && i < n)
-			{
-				i++;
-				j++;
-			}
-			if (s2[j] == '\0')
-				return (ptr);
-			j = 0;
-			i++;
-		}
+		if ((tmp + size <= mem) && !ft_strncmp(tmp, s2, size))
+			return (tmp);
+		tmp++;
 	}
 	return (NULL);
 }

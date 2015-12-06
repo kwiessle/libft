@@ -12,42 +12,24 @@
 
 #include "libft.h"
 
-int		ft_nb_blank(char const *str)
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
-			j++;
-		i++;
-	}
-	return (j);
-}
-
 char	*ft_strtrim(char const *s)
 {
 	int		i;
-	int		j;
-	char	*ret;
+	int		len;
 
 	i = 0;
-	j = 0;
-	ret = malloc(sizeof(ft_strlen(s) - ft_nb_blank(s)));
-	while (s[i] != '\0')
+	if (!s)
+		return (NULL);
+	while (ft_isspace(s[i]) == 1)
 	{
-		if (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-			i++;
-		else
-		{
-			ret[j] = s[i];
-			j++;
-			i++;
-		}
-		ret[i] = 0;
+		i++;
+		if (s[i] == '\0')
+			return (ft_strdup(""));
 	}
-	return (ret);
+	len = ft_strlen(s);
+	if (s[len] == '\0')
+		len--;
+	while (ft_isspace(s[len]) == 1)
+		len--;
+	return (ft_strsub(s, i, len - i + 1));
 }

@@ -11,8 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int		count_elem(char const *s, char c)
+static int		count_elem(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -33,19 +34,23 @@ int		count_elem(char const *s, char c)
 	return (j);
 }
 
-int		**set_matrix(const char *s, char c)
+static int		**set_matrix(const char *s, char c)
 {
 	int		**matrix;
 	int		i;
 
-	i = -1;
+	i = 0;
 	matrix = malloc((count_elem(s, c)) * sizeof(int*));
-	while (i++ < count_elem(s, c))
+	while (i < count_elem(s, c))
+	{
 		matrix[i] = malloc(2 * sizeof(int));
+		i++;
+	printf("set matrix\n\n");
+	}
 	return (matrix);
 }
 
-int		**matrix(const char *s, char c)
+static int		**matrix(const char *s, char c)
 {
 	int		**matrix;
 	int		i;
@@ -59,13 +64,14 @@ int		**matrix(const char *s, char c)
 	{
 		if (s[i] != c)
 			mem_i = i;
-		while (s[i] != c && s[i])
+		while (s[i] != c)
 		{
 			i++;
 			if (s[i] == c || s[i] == '\0')
 			{
 				matrix[index][0] = mem_i;
 				matrix[index][1] = i - mem_i;
+			printf("matrix\n\n");
 				index++;
 			}
 		}
@@ -83,7 +89,8 @@ char	**ft_strsplit(const char *s, char c)
 
 	map = matrix(s, c);
 	a = count_elem(s, c);
-	tab = malloc((a + 1) * sizeof(char*));
+	if (s)
+		tab = (char **)malloc((a + 1) * sizeof(char*));
 	i = 0;
 	while (i < a)
 	{
@@ -93,3 +100,18 @@ char	**ft_strsplit(const char *s, char c)
 	tab[i] = 0;
 	return (tab);
 }
+
+/*int		main()
+{
+	char **tab;
+	char *s = "***salut";
+
+	printf("count_elem = %d\n", count_elem(s, '*'));
+	tab = ft_strsplit(s, '*');
+	printf("result : %s\n", tab[0]);
+	printf("result : %s\n", tab[1]);
+//	printf("result : %s\n", tab[2]);
+//	printf("result : %s\n", tab[3]);
+
+	return (0);
+}*/

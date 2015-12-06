@@ -42,14 +42,15 @@ char	*ft_itoa(int n)
 	len = ft_int_len(n);
 	toa = malloc(sizeof(len));
 	if (n == -2147483648)
-		return ("-2147483648");
+		return (ft_strdup("-2147483648"));
 	if (n == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	if (n < 0)
 	{
 		toa[0] = '-';
 		n = -n;
 	}
+	toa[len] = '\0';
 	while (n > 0)
 	{
 		toa[len - 1] = n % 10 + '0';

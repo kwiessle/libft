@@ -14,19 +14,23 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t		i;
 	char		*ns;
+	size_t		i;
+	size_t		j;
 
-	if (!s)
-		return (NULL);
 	ns = ft_strnew(len);
+	if (!s || !ns)
+		return (NULL);
 	i = 0;
-	while (i < len)
+	j = 0;
+	while (start--)
+		i++;
+	while (j < len)
 	{
-		ns[i] = s[start];
-		start++;
+		ns[j] = s[i];
+		j++;
 		i++;
 	}
-	ns[i] = '\0';
+	ns[j] = '\0';
 	return (ns);
 }

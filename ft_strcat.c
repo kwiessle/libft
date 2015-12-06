@@ -4,7 +4,7 @@
 /*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+ /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 18:13:51 by kwiessle          #+#    #+#             */
 /*   Updated: 2015/11/23 18:17:41 by kwiessle         ###   ########.fr       */
 /*                                                                            */
@@ -15,25 +15,15 @@
 char	*ft_strcat(char *s1, const char *s2)
 {
 	int		i;
-	int		j;
-	char	*str;
+	int		len;
 
 	i = 0;
-	j = 0;
-	if (!s2)
-		return (s1);
-	str = malloc(sizeof(ft_strlen(s1) + ft_strlen(s2) + 1));
-	while (s1[j] != '\0')
+	len = ft_strlen(s1);
+	while (s2[i])
 	{
-		str[j] = s1[j];
-		j++;
-	}
-	while (s2[i] != '\0')
-	{
-		str[j] = s2[i];
-		j++;
+		s1[len + i] = s2[i];
 		i++;
 	}
-	str[j] = '\0';
-	return (str);
+	s1[len + i] = 0;
+	return (s1);
 }
