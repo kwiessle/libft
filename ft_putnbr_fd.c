@@ -6,7 +6,7 @@
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 18:06:48 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/11/23 18:06:52 by kwiessle         ###   ########.fr       */
+/*   Updated: 2015/12/17 12:44:04 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nb;
+
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
@@ -28,7 +29,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(nb % 10, fd);
 	}
 	else
-		{
+	{
 		if (n > 0)
 			ft_putchar_fd(n + '0', fd);
 		else
