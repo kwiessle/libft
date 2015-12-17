@@ -6,7 +6,7 @@
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/27 15:53:09 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/12/17 12:45:33 by kwiessle         ###   ########.fr       */
+/*   Updated: 2015/12/17 14:10:15 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@ char	*ft_strnew(size_t size)
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(char) * size + 1);
-	if (!str)
-		return (NULL);
-	while (size--)
-		str[size] = '\0';
+	str = ft_memalloc(sizeof(char) * (size + 1));
 	return (str);
 }

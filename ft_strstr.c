@@ -5,37 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 18:35:02 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/11/23 18:35:25 by kwiessle         ###   ########.fr       */
+/*   Created: 2015/12/17 13:40:26 by kwiessle          #+#    #+#             */
+/*   Updated: 2015/12/17 13:40:40 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+char	*ft_strstr(const char *tosearch, const char *tofind)
 {
-	size_t		i;
-	size_t		j;
+	int	i;
+	int	j;
 
-	i = 0;
-	j = 0;
-	if (s1[i] == '\0')
-		return ((char*)s1);
-	while ((s1[i] != '\0') && (s2[j] != '\0'))
+	i = -1;
+	if (!(tofind[0]))
+		return ((char*)tosearch);
+	while (tosearch[++i])
 	{
-		if (s1[i] == s2[j])
+		j = 0;
+		if (tosearch[i] == tofind[j])
 		{
-			i++;
-			j++;
-		}
-		else if (s1[i] != s2[j])
-		{
-			i++;
-			if (s2[j + 1] != '\0')
-				j = 0;
+			while (tosearch[i + j] == tofind[j] && tosearch[i + j]
+					&& tofind[j])
+			{
+				j++;
+				if (!(tofind[j]))
+					return ((char*)tosearch + i);
+			}
 		}
 	}
-	if (s2[j] == '\0')
-		return ((char*)s1 + i - j);
-	return (0);
+	return (NULL);
 }

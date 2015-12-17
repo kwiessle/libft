@@ -6,7 +6,7 @@
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 16:58:58 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/10/13 11:19:06 by kwiessle         ###   ########.fr       */
+/*   Updated: 2015/12/17 14:13:14 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	i;
 	unsigned int	j;
 
-	if (!s1 || !s2)
-		return (NULL);
 	ns = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	if (!s1 || !s2 || !ns)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (s1[i] != '\0')

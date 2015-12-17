@@ -6,7 +6,7 @@
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 18:25:58 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/11/23 18:26:34 by kwiessle         ###   ########.fr       */
+/*   Updated: 2015/12/17 13:53:58 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		return (NULL);
 	if (!(new_s = ft_strnew(ft_strlen(s))))
 		return (NULL);
-	i = -1;
-	while (s[++i])
+	i = 0;
+	while (s[i])
+	{
 		new_s[i] = f(s[i]);
+		i++;
+	}
+	new_s[i] = '\0';
 	return (new_s);
 }

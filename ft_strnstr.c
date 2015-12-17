@@ -6,7 +6,7 @@
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 18:31:32 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/11/23 18:31:38 by kwiessle         ###   ########.fr       */
+/*   Updated: 2015/12/17 14:21:54 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	mem = (char *)(s1 + n);
 	size = ft_strlen(s2);
 	tmp = (char *)s1;
-	if (!s2 || !s1 || !size)
+	if (!size)
 		return ((char *)s1);
 	while ((tmp = ft_strchr(tmp, *s2)) && tmp <= mem)
 	{
