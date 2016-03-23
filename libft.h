@@ -6,13 +6,12 @@
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 17:34:58 by kwiessle          #+#    #+#             */
-/*   Updated: 2015/12/17 12:51:54 by kwiessle         ###   ########.fr       */
+/*   Updated: 2016/03/23 17:01:06 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFF_SIZE 42
 
 # include <unistd.h>
 # include <string.h>
