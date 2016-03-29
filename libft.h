@@ -6,7 +6,7 @@
 /*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 17:34:58 by kwiessle          #+#    #+#             */
-/*   Updated: 2016/03/23 17:01:06 by kwiessle         ###   ########.fr       */
+/*   Updated: 2016/03/29 16:24:45 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+
+# define EOL '\n'
+# define BUFF_SIZE 1
+# define MAX_FD 256
 
 typedef struct		s_list
 {
@@ -83,5 +87,6 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int					get_next_line(int const fd, char **line);
 
 #endif

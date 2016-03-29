@@ -6,7 +6,7 @@
 #    By: kwiessle <kwiessle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/13 10:51:52 by kwiessle          #+#    #+#              #
-#    Updated: 2015/10/13 10:51:56 by kwiessle         ###   ########.fr        #
+#*   Updated: 2016/03/29 16:20:41 by kwiessle         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,7 @@ SRC_NAME= ft_atoi.c \
 		  ft_lstmap.c \
 		  ft_lstdel.c \
 		  ft_lstdelone.c \
+		  get_next_line.c \
 
 SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
 
