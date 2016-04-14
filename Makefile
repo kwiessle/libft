@@ -6,21 +6,14 @@
 #    By: kwiessle <kwiessle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/13 10:51:52 by kwiessle          #+#    #+#              #
-#*   Updated: 2016/03/29 16:20:41 by kwiessle         ###   ########.fr       *#
+#*   Updated: 2016/04/13 19:26:07 by kwiessle         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
-#This is a typical Makefile, re-usable anytime you want to compil C project.
-#All is in quiet for now, thank to do all the completion that needed for
-# specify project
 
-#Define name of program here
 NAME= libft.a
 
-#SRC BLOC
-# define all the .c file in the variable SRC NAME
-SRC_PATH= ./
-SRC_NAME= ft_atoi.c \
+SRC= ft_atoi.c \
 		  ft_bzero.c \
 		  ft_isalnum.c \
 		  ft_isalpha.c \
@@ -81,53 +74,25 @@ SRC_NAME= ft_atoi.c \
 		  ft_lstdelone.c \
 		  get_next_line.c \
 
-SRC= $(addprefix $(SRC_PATH), $(SRC_NAME))
-
-#OBJ BLOC
-#Do nothing here
-OBJ_PATH= obj/
-OBJ_NAME= $(SRC_NAME:.c=.o)
-OBJ= $(addprefix $(OBJ_PATH), $(OBJ_NAME))
-
-#GCC BLOC
-#GCC flag, you don't have to modify this (but you're free to go)
-GCC= clang -Wall -Wextra -Werror
-
-#INCLUDE BLOC
-#Don't forget to include the other librarie that yo use
-INC_LIB=
-INC_PATH= ./
-INC= -I $(INC_LIB) -I $(INC_PATH)
-
-#Once again, don't forget to includes librairy that you use !
-LIB=
-
-#FRAMEWORK BLOC
-#Don't forget to add framework that you need !
-FRAMEWORK=
+HEADER = ./includes
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
-	@echo "$(NAME) has been created."
-
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@mkdir $(OBJ_PATH) 2> /dev/null || echo "" 2> /dev/null
-	$(GCC) -o $@ -c $<
+$(NAME):
+		@gcc -Wall -Wextra -Werror -c $(SRC) -I $(HEADER)
+		@ar rc $(NAME) $(OBJ)
+		@ranlib $(NAME)
+		@echo "\033[32;1mlibft is ready\033[0m"
 
 clean:
-	@rm -rf $(OBJ)
-	@rm -rf $(OBJ_PATH)
-	@echo "$(NAME) objects files are deleted."
+		@rm -rf $(OBJ)
+		@echo "\033[37mall files.o are removed\033[0m"
 
 fclean: clean
-	@rm -rf $(NAME)
-	@echo "$(NAME) are deleted."
+		@rm -rf $(NAME)
+		@echo "\033[31m$(NAME) is deleted\033[0m"
 
 re: fclean all
 
-norme:
-	@norminette $(INC_LIB)*.[ch]
-
-.PHONY: clean fclean re norme
+.PHONY: all clean fclean re
