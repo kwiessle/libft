@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kwiessle <kwiessle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/14 11:46:27 by kwiessle          #+#    #+#             */
-/*   Updated: 2018/08/09 19:16:56 by kwiessle         ###   ########.fr       */
+/*   Created: 2018/08/11 13:27:52 by kwiessle          #+#    #+#             */
+/*   Updated: 2018/08/11 16:37:09 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+static long	max_power(long nb, int base)
 {
-	size_t		i;
-	char		*s1;
+	long max;
 
-	s1 = (char *)dst;
-	i = 0;
-	while (i < n)
-	{
-		*(char *)s1 = *(char *)src;
-		s1++;
-		src++;
-		i++;
-	}
-	return (dst);
+	max = base;
+	while (max <= 2147483648)
+		max *= base;
+	if (max > nb)
+		max /= base;
+	return (max);
+}
+
+void    ft_putnbr_base(unsigned int n, int base, char *set)
+{
+    long            power = max_power(n, base);
+
+    while (power > 0) {
+        ft_putchar(set[n / power]);
+        n %= power;
+        power = power / base;
+    }
 }

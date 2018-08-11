@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: kwiessle <kwiessle@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/10/13 10:51:52 by kwiessle          #+#    #+#              #
-#*   Updated: 2016/04/13 19:26:07 by kwiessle         ###   ########.fr       *#
+#    Updated: 2018/08/11 13:31:51 by kwiessle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,9 @@ SRC= ft_atoi.c \
 		  ft_lstdel.c \
 		  ft_lstdelone.c \
 		  get_next_line.c \
+		  ft_strappend.c \
+		  ft_itoa_base.c \
+		  ft_putnbr_base.c \
 
 HEADER = ./includes
 OBJ = $(SRC:.c=.o)

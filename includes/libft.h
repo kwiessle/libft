@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kwiessle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kwiessle <kwiessle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 17:34:58 by kwiessle          #+#    #+#             */
-/*   Updated: 2016/04/14 12:22:21 by kwiessle         ###   ########.fr       */
+/*   Updated: 2018/08/11 16:41:16 by kwiessle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 # define BUFF_SIZE 42
 # define EOL '\n'
+# define B16_SET "0123456789abcdef"
+# define B64_SET "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
 typedef struct		s_list
 {
@@ -97,5 +99,8 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					get_next_line(const int fd, char **line);
+char 				*ft_strappend(char *chain, char new);
+char				*ft_itoa_base(long value, int base);
+void				ft_putnbr_base(unsigned int n, int base, char *set);
 
 #endif
